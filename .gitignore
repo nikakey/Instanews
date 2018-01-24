@@ -1,4 +1,32 @@
-# Ignore system files
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
+
+# Ignore system files 
 .DS_Store
 .DS_Store?
 ._*
@@ -7,5 +35,6 @@
 ehthumbs.db
 *[Tt]humbs.db
 *.Trashes
-# Ignore npm packages
+
+# Ignore npm packages 
 node_modules/
