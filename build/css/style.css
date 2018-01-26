@@ -128,4 +128,5 @@ footer {
     text-transform: uppercase; }
 
 .copyright {
-  text-align: center; }
+  text-align: center;
+  font-size: .9rem; }
