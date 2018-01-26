@@ -1,6 +1,12 @@
 footer {
+    padding-top: 1rem;
     color: $second-text-color;
     span {
         text-transform: $capital-letters;
     }
+    height: 10vh;
+}
+
+.copyright {
+    text-align: center;
 }

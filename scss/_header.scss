@@ -1,0 +1,30 @@
+header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    height: 90vh;
+    width: 100%;
+}
+
+.logo {
+    width: $header-width;
+    margin: $header-center-placer;
+}
+
+.user-instructions {
+    @extend .logo;
+    p {
+        font-size: .8rem;
+    }
+}
+
+.selection {
+    @extend .logo;
+}
+
+select {
+    font-size: 1rem;
+}

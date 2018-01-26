@@ -1,3 +1,8 @@
+* {
+    box-sizing: border-box;
+}
+
+
 body {
     color: $main-text-color;
     font-size: $main-font-size;
@@ -5,4 +10,15 @@ body {
     font-weight: $main-font-weight;
     font-style: $main-font-style;
     background: $background-color;
+}
+
+.content-wrapper {
+    width: 100%;
+    height: auto;
+    @include tablet {
+        min-width: $tablet-width;
+    }
+    @include desktop{
+        min-width: $desktop-width;
+    }
 }
