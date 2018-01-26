@@ -13,7 +13,6 @@ body {
 }
 
 .content-wrapper {
-    width: 100%;
     height: auto;
     @include tablet {
         min-width: $tablet-width;

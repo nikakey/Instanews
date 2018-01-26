@@ -5,9 +5,16 @@ footer {
         text-transform: $capital-letters;
     }
     height: 10vh;
+    width: 100%;
 }
 
 .copyright {
     text-align: center;
     font-size: .9rem;
+    margin: $footer-center-placer;
+    width: 300px;
+    @include desktop {
+        text-align: left;
+        margin: 0 0 0 2rem;
+    }
 }
