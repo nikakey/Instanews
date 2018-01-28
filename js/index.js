@@ -48,7 +48,7 @@ $(document).ready(function() {
 
                         $('.news').append(news);
                         
-                        //Put a news image into the background of the news cell
+                        //Put a news image into the background of a news cell
                         
                         $('#cell'+index).css('background-image', 'url(' + value.multimedia[4].url + ')');
                         count = count + 1;

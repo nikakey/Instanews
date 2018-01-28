@@ -14,5 +14,21 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: 50% top;
+    position: relative;
     
+}
+
+.news-text {
+    text-decoration: none;
+    text-align: left;
+    background: $transparent-background-color;
+    color: $main-text-color;
+    line-height: 1.5;
+    padding: .5rem;
+    position: absolute;
+    bottom: 0;
+}
+
+a:link, a:hover {
+    text-decoration: none;
 }
