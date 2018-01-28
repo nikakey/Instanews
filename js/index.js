@@ -1,7 +1,8 @@
 $(document).ready(function() {
     
     
-    
+    //Get URL
+
     $('select').change(function() {
         $('select option:selected').each(function() {
             var url = 'https://api.nytimes.com/svc/topstories/v2/';
@@ -9,9 +10,8 @@ $(document).ready(function() {
             url += '?' + $.param({
                 'api-key': 'fea6cad9ad654cff86b0dee6974b6832'
             });
-
-            console.log(url);
-
+            
+            //Add ajax 
 
             $.ajax({
                 url: url,
@@ -20,34 +20,47 @@ $(document).ready(function() {
             
             .done(function(data) {
                 var results = data.results;
-                console.log(results);
 
-                $.each(results, function(key, value) { 
-                    if(value.multimedia.length === 0) {
-                        console.log('There is no image')
-                        return true;
+                //Get news
+                
+                var count = 0;
+                
+                for(var index = 0; index < results.length; index++) {
+                    var value = results[index];    
+
+                    //Check images in the articles
+
+                    if(value.multimedia.length > 0) {
+                        var news = '';
+                        news += '<li>';
+                        news += '<div class="news-cell">';
+                        news += '<a href="' + value.url + '" target="_blank">';
+                        news += '<img src="' + value.multimedia[0].url + '"/>';
+                        news += '</a>'
+                        news += '<p class="news-text">' + value.abstract + '</p>'
+                        news += '</li>';
+
+                        $('.news').append(news);
+                        count = count + 1;
+
+                        //Get only 12 news
+
+                        if(count === 12) {
+                            break;
+                        }
+
                     }
-                    else {
-                        console.log('There is an image');
-                    }
-                })
-            //         var news = '';
-            //         news += '<li>';
-            //         news += '<img src="' + value. + '"/>';
-            //         news += '<p>' + value. + '</p>';
-            //         news += '</li>';
-            
-            //         $('.news').append(news);
-            //     })
+                }
             })
             
-            // .fail(function() {
-            //     $('.news').append('<li>' + 'Sorry! There was a problem, please try again.' + '</li>');
-            // });
+            //Add error message
+
+            .fail(function() {
+                $('.news').append('<li>' + 'Sorry! There was a problem, please try again.' + '</li>');
+            });
         });
         
     })
-    // .trigger( 'change' );
 
 
 
