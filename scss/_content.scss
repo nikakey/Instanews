@@ -1,0 +1,18 @@
+.news-grid {
+    margin-bottom: 2rem;
+}
+
+.news {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.news-cell {
+    width: 100%;
+    height: 450px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% top;
+    
+}

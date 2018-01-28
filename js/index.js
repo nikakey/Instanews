@@ -39,14 +39,18 @@ $(document).ready(function() {
                     if(value.multimedia.length > 0) {
                         var news = '';
                         news += '<li>';
-                        news += '<div class="news-cell">';
-                        news += '<a href="' + value.url + '" target="_blank">';
-                        news += '<img src="' + value.multimedia[0].url + '"/>';
-                        news += '</a>'
+                        news += '<a href="' + value.url + '" target="_blank">'
+                        news += '<div class="news-cell" id="cell'+index+'">'
                         news += '<p class="news-text">' + value.abstract + '</p>'
+                        news += '</div>'
+                        news += '</a>'
                         news += '</li>';
 
                         $('.news').append(news);
+                        
+                        //Put a news image into the background of the news cell
+                        
+                        $('#cell'+index).css('background-image', 'url(' + value.multimedia[4].url + ')');
                         count = count + 1;
 
                         //Get only 12 news
