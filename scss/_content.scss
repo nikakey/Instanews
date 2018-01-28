@@ -6,6 +6,21 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    @include tablet {
+        flex-direction: unset;
+    }
+    li {
+        width: 100%;
+        @include tablet {
+            width: 50%;
+        }
+        @include desktop {
+            width: 25%;
+        }
+    }
 }
 
 .news-cell {
@@ -15,7 +30,6 @@
     background-repeat: no-repeat;
     background-position: 50% top;
     position: relative;
-    
 }
 
 .news-text {

@@ -219,7 +219,25 @@ select {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
-          flex-direction: column; }
+          flex-direction: column;
+  width: 100%;
+  height: auto;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  @media (min-width: 600px) {
+    .news {
+      -webkit-box-orient: unset;
+      -webkit-box-direction: unset;
+          -ms-flex-direction: unset;
+              flex-direction: unset; } }
+  .news li {
+    width: 100%; }
+    @media (min-width: 600px) {
+      .news li {
+        width: 50%; } }
+    @media (min-width: 1000px) {
+      .news li {
+        width: 25%; } }
 
 .news-cell {
   width: 100%;
