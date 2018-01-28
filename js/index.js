@@ -19,6 +19,12 @@ $(document).ready(function() {
             })
             
             .done(function(data) {
+                
+                //Change the header
+                
+                $('header').toggleClass('header-photos');
+                $('.logo').toggleClass('logo-photos')
+                
                 var results = data.results;
 
                 //Get news
@@ -28,7 +34,7 @@ $(document).ready(function() {
                 for(var index = 0; index < results.length; index++) {
                     var value = results[index];    
 
-                    //Check images in the articles
+                    //Check images in the articles and append the news
 
                     if(value.multimedia.length > 0) {
                         var news = '';

@@ -17,8 +17,8 @@ header {
 }
 
 .logo {
-    width: $header-width;
-    margin: $header-center-placer;
+    width: $header-initial-width;
+    margin: $header-initial-center-placer;
     @include tablet {
         margin: 0 .5rem 0 0;
         max-width: 220px;
@@ -35,11 +35,11 @@ header {
 }
 
 .selection-wrapper {
-    width: $header-width;
-    margin: $header-center-placer;
+    width: $header-initial-width;
+    margin: $header-initial-center-placer;
     @include tablet {
         width: 250px;
-        height: 80px;
+        height: 65px;
         margin: 0 0 0 .5rem;
     }
     @include desktop {
@@ -53,6 +53,9 @@ header {
         font-size: .8rem;
         @include tablet {
             font-size: .9rem;
+        }
+        @include desktop {
+            font-size: 1rem;
         }
     }
     @include tablet {
@@ -69,7 +72,7 @@ header {
     @extend .selection-wrapper;
     @include tablet {
         width: 250px;
-        height: 50px;
+        height: 35px;
         margin: 1rem 0 0 0;
     }
     @include desktop {
@@ -79,4 +82,29 @@ header {
 
 select {
     font-size: 1.1rem;
+}
+
+.header-photos {
+    height: auto;
+    @include desktop {
+        justify-content: flex-start;
+    }
+}
+
+.logo-photos {
+    margin: $header-photos-center-placer;
+    @include tablet {
+        margin: 2rem .5rem 2rem 0;
+        width: $header-photos-width;
+    }
+    @include desktop {
+        margin-left: 2rem;
+    }
+    img {
+        width: 100%;
+        max-width: 150px;
+        @include tablet {
+            width: 65px;
+        }
+    }
 }
