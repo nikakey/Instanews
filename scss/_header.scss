@@ -19,6 +19,7 @@ header {
 .logo {
     width: $header-initial-width;
     margin: $header-initial-center-placer;
+    transition: 2s;
     @include tablet {
         margin: 0 .5rem 0 0;
         max-width: 220px;

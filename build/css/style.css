@@ -124,7 +124,9 @@ header {
 
 .logo {
   width: 300px;
-  margin: 0 auto 1rem auto; }
+  margin: 0 auto 1rem auto;
+  -webkit-transition: 2s;
+  transition: 2s; }
   @media (min-width: 600px) {
     .logo {
       margin: 0 .5rem 0 0;
