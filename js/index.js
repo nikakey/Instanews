@@ -1,11 +1,31 @@
 $(document).ready(function() {
-    
-    
-    //Get URL
 
     $('select').change(function() {
         $('select option:selected').each(function() {
-            $(".news li").remove();
+            
+            //Clear populated data
+
+            $('.news li').remove();
+            
+            //Move the footer to the bottom
+            
+            if($('footer').hasClass('footer-photos')){
+                $('footer').removeClass('footer-photos');
+            }
+
+            //Change the header
+                
+            if(!$('header').hasClass('header-photos')){
+                $('header').addClass('header-photos');
+                $('.logo').addClass('logo-photos');
+            }
+            
+            //Display loading gif
+
+            $('.loader').css('display', 'block'); 
+
+            //Get URL
+            
             var url = 'https://api.nytimes.com/svc/topstories/v2/';
             url += $('option:selected').val() + '.json';
             url += '?' + $.param({
@@ -20,13 +40,6 @@ $(document).ready(function() {
             })
             
             .done(function(data) {
-                
-                //Change the header
-                
-                if(!$('header').hasClass("header-photos")){
-                    $('header').addClass('header-photos');
-                    $('.logo').addClass('logo-photos');
-                 }
                 
                 var results = data.results;
 
@@ -50,6 +63,12 @@ $(document).ready(function() {
                         news += '</li>';
 
                         $('.news').append(news);
+
+                        //Move footer to the bottom when data is populated
+
+                        if(!$('footer').hasClass('footer-photos')){
+                            $('footer').addClass('footer-photos');
+                        }
                         
                         //Put a news image into the background of a news cell
                         
@@ -70,6 +89,12 @@ $(document).ready(function() {
 
             .fail(function() {
                 $('.news').append('<li>' + 'Sorry! There was a problem, please try again.' + '</li>');
+            })
+
+            //Hide loading gif
+
+            .always(function() {
+                $('.loader').hide('fast');
             });
         });
         

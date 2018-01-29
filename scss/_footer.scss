@@ -1,11 +1,13 @@
 footer {
-    padding-top: 1rem;
+    padding-top: .5rem;
     color: $second-text-color;
     span {
         text-transform: $capital-letters;
     }
     height: 10vh;
     width: 100%;
+    position: fixed;
+    bottom: 0; 
 }
 
 .copyright {
@@ -17,4 +19,8 @@ footer {
         text-align: left;
         margin: 0 0 0 2rem;
     }
+}
+
+.footer-photos {
+    position: relative;
 }
