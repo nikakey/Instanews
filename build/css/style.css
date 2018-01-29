@@ -258,18 +258,24 @@ select {
   background-position: 50% top;
   position: relative; }
 
-.news-text {
-  text-decoration: none;
-  text-align: left;
-  background: rgba(0, 0, 0, 0.7);
-  color: #ffffff;
-  line-height: 1.5;
-  padding: .5rem;
-  position: absolute;
-  bottom: 0; }
-
-a:link, a:hover {
+a {
   text-decoration: none; }
+  a .news-text {
+    text-decoration: none;
+    text-align: left;
+    background: rgba(0, 0, 0, 0.7);
+    color: #ffffff;
+    line-height: 1.5;
+    padding: .5rem;
+    position: absolute;
+    bottom: 0;
+    visibility: hidden;
+    opacity: 0;
+    -webkit-transition: visibility 0s, opacity 0.5s linear;
+    transition: visibility 0s, opacity 0.5s linear; }
+  a:hover .news-text {
+    visibility: visible;
+    opacity: 1; }
 
 footer {
   padding-top: .5rem;
