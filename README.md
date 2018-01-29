@@ -15,12 +15,13 @@ I used the mobile-first approach and then optimized the website for 2 more scree
 
 * Used Sass as a preprocessor, minified CSS
 * Used Gulp to compile Sass and check errors
-* Used CSS3 transitions to slowly show and hide the article abstract on hover
 * Used CSS3 transition while resizing the header area
+* Used CSS3 transitions to slowly show and hide the article abstract on hover
+
+![alt text](/images/gif-for-readme/project-2-gif-hover.gif "Gif of the project")
 
 ## Key points of JS:
 
 * Used Ajax to get data from the NYT Top Stories
 * Displayed only 12 news with photos in the grid
 * Incorporated a loading gif to show up on the website while a user is transitioned between two states
-
