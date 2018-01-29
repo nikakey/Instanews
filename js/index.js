@@ -5,6 +5,7 @@ $(document).ready(function() {
 
     $('select').change(function() {
         $('select option:selected').each(function() {
+            $(".news li").remove();
             var url = 'https://api.nytimes.com/svc/topstories/v2/';
             url += $('option:selected').val() + '.json';
             url += '?' + $.param({
@@ -22,8 +23,10 @@ $(document).ready(function() {
                 
                 //Change the header
                 
-                $('header').toggleClass('header-photos');
-                $('.logo').toggleClass('logo-photos')
+                if(!$('header').hasClass("header-photos")){
+                    $('header').addClass('header-photos');
+                    $('.logo').addClass('logo-photos');
+                 }
                 
                 var results = data.results;
 
