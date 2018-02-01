@@ -9,16 +9,17 @@ $(document).ready(function () {
 
         // //Move the footer to the bottom
 
-        // if($('footer').hasClass('footer-photos')){
-        //     $('footer').removeClass('footer-photos');
-        // }
+        if ($('footer').hasClass('footer-photos')) {
+            $('footer').removeClass('footer-photos');
+        }
+
 
         //Change the header
 
-        if (!$('header').hasClass('header-photos')) {
-            $('header').addClass('header-photos');
-            $('.logo').addClass('logo-photos');
-        }
+        // if (!$('header').hasClass('header-photos')) {
+        $('header').addClass('header-photos');
+        $('.logo').addClass('logo-photos');
+        // }
 
         //Display loading gif
 
@@ -66,9 +67,9 @@ $(document).ready(function () {
 
                         //Move footer to the bottom when data is populated
 
-                        // if(!$('footer').hasClass('footer-photos')){
-                        //     $('footer').addClass('footer-photos');
-                        // }
+                        if (!$('footer').hasClass('footer-photos')) {
+                            $('footer').addClass('footer-photos');
+                        }
 
                         //Put a news image into the background of a news cell
 
@@ -88,7 +89,7 @@ $(document).ready(function () {
             //Add error message
 
             .fail(function () {
-                $('.news').append('<li>' + 'Sorry! There was a problem, please try again.' + '</li>');
+                $('.news').append('<li>Sorry! There was a problem, please try again.</li>');
             })
 
             //Hide loading gif
@@ -96,7 +97,7 @@ $(document).ready(function () {
             .always(function () {
                 $('.loader').hide('fast');
             });
-        });
+    });
 
     // })
 
