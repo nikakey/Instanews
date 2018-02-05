@@ -6,7 +6,21 @@ var gulp = require('gulp'), //load gulp first!
     sass = require('gulp-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     cssnano = require('gulp-cssnano'),
-    prettyError = require('gulp-prettyerror');
+    prettyError = require('gulp-prettyerror'),
+    babel = require('gulp-babel');
+
+
+//gulp babel task
+var input = './js/*.js';
+var output = './js/transpiled'; //New Folder
+
+
+
+gulp.task('babel', () => {
+    return gulp.src(input)
+    .pipe(babel())
+    .pipe(gulp.dest(output));
+});
 
 //gulp task for sass
 
@@ -28,7 +42,7 @@ gulp.task('sass', function(){
 //gulp lint task
 
 gulp.task('lint', function(){
-    return gulp.src(['./js/*.js'])
+    return gulp.src(['./js/transpiled/*.js'])
         .pipe(eslint()) 
         .pipe(eslint.format())
         .pipe(eslint.failAfterError())
@@ -37,7 +51,7 @@ gulp.task('lint', function(){
 //Script task to minify, rename and put in build folder
 
 gulp.task('scripts', gulp.series('lint', function(){
-    return gulp.src('./js/*.js')  
+    return gulp.src('./js/transpiled/*.js')  
         .pipe(uglify()) //call uglify function on files
         .pipe(rename({ extname: '.min.js' })) //rename the ugly file
         .pipe(gulp.dest('./build/js'))
@@ -47,7 +61,7 @@ gulp.task('scripts', gulp.series('lint', function(){
 
 gulp.task('watch', function() {
     gulp.watch('scss/*.scss', gulp.series('sass'));
-    gulp.watch('js/*.js', gulp.series('scripts'));
+    gulp.watch('js/*.js', gulp.series(['babel','scripts']));
 });
 
 //gulp browser sync task
