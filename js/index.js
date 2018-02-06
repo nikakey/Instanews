@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    $('select').change(function() {
+    $('select').change(() => {
             
         //Clear populated data
 
@@ -38,7 +38,7 @@ $(document).ready(function() {
             method: 'GET',
         })
         
-        .done(function(data) {
+        .done((data) => {
             
             let results = data.results;
 
@@ -86,15 +86,11 @@ $(document).ready(function() {
         
         //Add error message
 
-        .fail(function() {
-            $('.news').append(`<li>Sorry! There was a problem, please try again.</li>`);
-        })
+        .fail(() => $('.news').append(`<li>Sorry! There was a problem, please try again.</li>`))
 
         //Hide loading gif
 
-        .always(function() {
-            $('.loader').hide('fast');
-        });
+        .always(() => $('.loader').hide('fast'));
         
     })
 

@@ -86,13 +86,13 @@ $(document).ready(function () {
         //Add error message
 
         .fail(function () {
-            $('.news').append('<li>Sorry! There was a problem, please try again.</li>');
+            return $('.news').append('<li>Sorry! There was a problem, please try again.</li>');
         })
 
         //Hide loading gif
 
         .always(function () {
-            $('.loader').hide('fast');
+            return $('.loader').hide('fast');
         });
     });
 });
