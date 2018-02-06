@@ -86,7 +86,7 @@ $(document).ready(function () {
         //Add error message
 
         .fail(function () {
-            $('.news').append('<li>' + 'Sorry! There was a problem, please try again.' + '</li>');
+            $('.news').append('<li>Sorry! There was a problem, please try again.</li>');
         })
 
         //Hide loading gif
