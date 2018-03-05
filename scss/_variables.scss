@@ -2,7 +2,7 @@
 $main-text-color: #ffffff;
 $background-color: #000000;
 $transparent-background-color: rgba(0, 0, 0, 0.7);
-$second-text-color: #c2c2c2;
+$second-text-color: darken($main-text-color, 23.92);
 
 //Text Style
 
