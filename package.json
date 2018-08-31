@@ -32,7 +32,9 @@
   },
   "dependencies": {
     "hoek": "^5.0.3",
+    "lodash": "^4.17.10",
     "mime": "^2.3.1",
-    "mixin-deep": "^2.0.0"
+    "mixin-deep": "^2.0.0",
+    "sshpk": "^1.14.2"
   }
 }
