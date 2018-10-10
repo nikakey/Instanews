@@ -31,10 +31,12 @@
     "gulp-uglify": "^3.0.0"
   },
   "dependencies": {
+    "atob": "^2.1.2",
     "hoek": "^5.0.3",
     "lodash": "^4.17.10",
     "mime": "^2.3.1",
     "mixin-deep": "^2.0.0",
+    "randomatic": "^3.1.0",
     "sshpk": "^1.14.2"
   }
 }
