@@ -32,8 +32,10 @@
   },
   "dependencies": {
     "atob": "^2.1.2",
+    "cryptiles": "^4.1.2",
     "hoek": "^5.0.3",
     "lodash": "^4.17.10",
+    "macaddress": "^0.2.9",
     "mime": "^2.3.1",
     "mixin-deep": "^2.0.0",
     "randomatic": "^3.1.0",
